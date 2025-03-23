@@ -1,0 +1,48 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.js
+
+# Environment variables
+.env
+
+# testing
+/coverage
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Large model files
+*.pth
+saved_model.pth
+best_stutter_detector.pth
+
+# PyTorch specific
+*.dll
+*.lib
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+
+.vscode/
+.idea/
