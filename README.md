@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+Speech Disorder Detection Using Deep Learning (Dysarthria & Stuttering)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+📌 Project Overview
 
-## Available Scripts
+This project focuses on detecting speech disorders, specifically stuttering and dysarthria, using an ensemble deep learning approach. It integrates Wav2Vec2 for raw audio processing and a CNN for spectrogram analysis, achieving a robust classification system that improves accuracy over independent models.
 
-In the project directory, you can run:
+🚀 Features
 
-### `npm start`
+Automatic Speech Disorder Detection: Identifies whether a given speech sample is healthy, stuttering, or dysarthric.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Hybrid Model Approach:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Wav2Vec2 extracts deep audio features from raw speech.
 
-### `npm test`
+CNN processes spectrogram images to capture frequency patterns.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Combined features enhance classification performance.
 
-### `npm run build`
+Feature-Based Adjustments:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Phoneme repetition score for stuttering.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Speaking rate and pause frequency analysis for dysarthria.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Ensemble Model for Improved Accuracy: Combines independent dysarthria and stuttering models with feature-based confidence adjustments.
 
-### `npm run eject`
+Full-Stack Implementation:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Frontend: React.js for user interaction.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Backend: FastAPI for API endpoints and processing.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Database: Supabase for storing audio files, spectrograms, and predictions.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+📝 Model Architecture
 
-## Learn More
+1️⃣ Wav2Vec2-based Feature Extraction
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Extracts high-level speech representations from raw audio.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Pretrained on large-scale speech data.
 
-### Code Splitting
+2️⃣ CNN-based Spectrogram Analysis
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+4 convolutional layers with BatchNorm, ReLU, and MaxPooling.
 
-### Analyzing the Bundle Size
+Processes Mel spectrograms to capture frequency patterns.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+3️⃣ Ensemble Classifier
 
-### Making a Progressive Web App
+Combines Wav2Vec2 and CNN features via fully connected layers.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Confidence-based decision making using speech metrics (repetition, pauses, rate).
