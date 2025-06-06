@@ -1,4 +1,4 @@
-Speech Disorder Detection Using Deep Learning (Dysarthria & Stuttering)
+#Speech Disorder Detection Using Deep Learning (Dysarthria & Stuttering)
 
 📌 Project Overview
 
